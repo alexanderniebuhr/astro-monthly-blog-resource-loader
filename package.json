@@ -1,0 +1,66 @@
+{
+  "name": "@alexanderniebuhr/astro-monthly-blog-resource-loader",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --build --verbose",
+    "prepublishOnly": "node --run build",
+    "check": "publint && attw --pack . --ignore-rules=cjs-resolves-to-esm"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "module": "./dist/index.js",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "astro",
+    "astro-loader"
+  ],
+  "bugs": {
+    "url": "https://github.com/alexanderniebuhr/astro-monthly-blog-resource-loader/issues"
+  },
+  "author": {
+    "name": "Alexander Niebuhr",
+    "email": "alexander@craftlions.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexanderniebuhr/astro-monthly-blog-resource-loader.git"
+  },
+  "homepage": "https://github.com/alexanderniebuhr/astro-monthly-blog-resource-loader/blob/main/README.md",
+  "license": "MIT",
+  "peerDependencies": {
+    "astro": "^4.14.0"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "0.15.4",
+    "@biomejs/biome": "1.8.3",
+    "astro": "4.15.1",
+    "publint": "0.2.10",
+    "typescript": "5.5.4"
+  },
+  "dependencies": {
+    "acorn": "8.12.1",
+    "mdast-util-from-markdown": "2.0.1",
+    "mdast-util-mdx": "3.0.0",
+    "micromark-extension-mdxjs": "3.0.0",
+    "unist-util-filter": "5.0.1",
+    "unist-util-inspect": "8.1.0",
+    "unist-util-select": "5.1.0",
+    "unist-util-visit": "5.0.0"
+  }
+}
